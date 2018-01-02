@@ -122,7 +122,7 @@ for(i in 1:length(levs))
     # month title text
     annotate("text",x=1,y=single$monthpos[1],label=fullmonth,size=35,hjust=0,col="darkred",fontface="bold",family="gochi")+
     # image description text
-    annotate("text",x=single$date[nrow(single)],y=single$monthpos[1],label=cap$description[i],size=14,family="gochi",hjust=1,col=cap$textcol[i])+
+    annotate("text",x=single$date[nrow(single)],y=single$monthpos[1],label=cap$description[i],size=24,family="gochi",hjust=1,col=cap$textcol[i])+
     # week background circle
     geom_point(aes(x=date,y=weekpos),size=11,colour="grey90",alpha=single$weekbgalpha,shape=20)+
     # week text
