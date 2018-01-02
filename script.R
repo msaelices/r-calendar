@@ -116,25 +116,25 @@ for(i in 1:length(levs))
     # background rectangle 1
     annotate("rect",xmin=-Inf,xmax=Inf,ymin=0,ymax=single$weekpos[1],alpha=1,fill="white")+
     # background rectangle 2
-    annotate("rect",xmin=-Inf,xmax=Inf,ymin=single$weekpos[1],ymax=single$weekpos[1]+0.4,alpha=0.6,fill="white")+
+    annotate("rect",xmin=-Inf,xmax=Inf,ymin=single$weekpos[1],ymax=single$weekpos[1]+0.4,alpha=0.6,fill="pink")+
     # month title text faded with year
-    annotate("text",x=1,y=single$monthpos[1],label=paste0(fullmonth," 2018"),size=27,hjust=0,col="grey40",fontface="bold",family="gochi")+
+    annotate("text",x=1,y=single$monthpos[1],label=paste0(fullmonth," 2018"),size=35,hjust=0,col="grey40",fontface="bold",family="gochi")+
     # month title text
-    annotate("text",x=1,y=single$monthpos[1],label=fullmonth,size=27,hjust=0,col="grey20",fontface="bold",family="gochi")+
+    annotate("text",x=1,y=single$monthpos[1],label=fullmonth,size=35,hjust=0,col="darkred",fontface="bold",family="gochi")+
     # image description text
-    annotate("text",x=single$date[nrow(single)],y=single$monthpos[1],label=cap$description[i],size=4,hjust=1,col=cap$textcol[i])+
+    annotate("text",x=single$date[nrow(single)],y=single$monthpos[1],label=cap$description[i],size=14,family="gochi",hjust=1,col=cap$textcol[i])+
     # week background circle
     geom_point(aes(x=date,y=weekpos),size=11,colour="grey90",alpha=single$weekbgalpha,shape=20)+
     # week text
     geom_text(aes(x=date,y=weekpos),label=single$week,size=3,col="grey20",fontface="bold")+
     # day text
-    geom_text(aes(x=date,y=daypos),label=single$day,size=4.8,col=single$holiday)+
+    geom_text(aes(x=date,y=daypos),label=single$day,size=14,col=single$holiday,family="gochi")+
     # date text
-    geom_text(aes(x=date,y=datepos),label=single$date,size=17.5,col=single$holiday)+
+    geom_text(aes(x=date,y=datepos),label=single$date,size=24,col=single$holiday,family="gochi")+
     # important information text line 1
-    geom_text(aes(x=date,y=markpos1),label=single$description2,size=2.8,col="grey20",vjust=1)+
+    geom_text(aes(x=date,y=markpos1),label=single$description2,size=14,col="grey20",vjust=1,family="gochi")+
     # important information text line 2
-    geom_text(aes(x=date,y=markpos2),label=single$description1,size=2.8,col="grey20",vjust=1)+
+    geom_text(aes(x=date,y=markpos2),label=single$description1,size=14,col="grey20",vjust=1,family="gochi")+
     # limit scales
     scale_x_continuous(limits=c(0,max(single$date)+1),expand=c(0,0.6))+
     scale_y_continuous(limits=c(0,10),expand=c(0,0))+
