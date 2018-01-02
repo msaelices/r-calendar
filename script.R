@@ -13,6 +13,9 @@ font_add_google("Gochi Hand", "gochi")
 
 showtext_auto()
 
+# set spanish locale
+Sys.setlocale(category = "LC_TIME", locale="es_ES.UTF-8")
+
 rm(list=ls())
 
 img_bleed <- 6
@@ -77,12 +80,23 @@ df_cal$daypos <- df_cal$datepos[1]+0.25
 df_cal$weekpos <- df_cal$daypos[1]+0.25
 df_cal$monthpos <- df_cal$weekpos[1]+0.20
 
+months_english_names <- c("January","February","March","April","May","June","July",
+                          "August","September","October","November","December")
+months_spanish_names <- c("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",
+                          "Agosto","Septiembre","Octubre","Noviembre","Diciembre")
+
+month_name <- function(patterns, replacements, x) {
+  for(i in 1:length(patterns))
+    x <- gsub(patterns[i], replacements[i], x)
+  x
+}
+
 # EXPORT LOOP
 # loop to create and export monthwise
 levs <- levels(factor(df_cal$month))
 for(i in 1:length(levs))
 {
-  fullmonth <- month.name[i]
+  fullmonth <- month_name(months_english_names, months_spanish_names, month.name[i])
   message(paste0("Running ",fullmonth," ..."))
 
   # subset one month
