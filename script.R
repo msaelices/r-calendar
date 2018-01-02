@@ -8,10 +8,10 @@ library(extrafont) # for custom fonts
 library(png) # read png
 library(jpeg) # read jpeg
 
-# prepare fonts
-font_import(pattern="Gidole",prompt=FALSE)
-loadfonts(device = "win")
-windowsFonts(sans="Gidole")
+library(showtext)
+font_add_google("Gochi Hand", "gochi")
+
+showtext_auto()
 
 rm(list=ls())
 
@@ -75,7 +75,7 @@ df_cal$markpos2 <- df_cal$markpos1[1]+0.12
 df_cal$datepos <- df_cal$markpos2[1]+0.20
 df_cal$daypos <- df_cal$datepos[1]+0.25
 df_cal$weekpos <- df_cal$daypos[1]+0.25
-df_cal$monthpos <- df_cal$weekpos[1]+0.26
+df_cal$monthpos <- df_cal$weekpos[1]+0.20
 
 # EXPORT LOOP
 # loop to create and export monthwise
@@ -84,17 +84,17 @@ for(i in 1:length(levs))
 {
   fullmonth <- month.name[i]
   message(paste0("Running ",fullmonth," ..."))
-  
+
   # subset one month
   single <- subset(df_cal,df_cal$month==i)
-  
+
   # read background image
   #pic <- readPNG(paste0("./images/",i,".png"))
   pic <- readJPEG(paste0("./images/",i,".jpg"))
   pic1 <- grid::rasterGrob(pic)
-  pic1$width <- unit(1, "npc") 
+  pic1$width <- unit(1, "npc")
   pic1$height <- unit(1, "npc")
-  
+
   # create final image
   p <- ggplot(single)+
     # background image
@@ -104,9 +104,9 @@ for(i in 1:length(levs))
     # background rectangle 2
     annotate("rect",xmin=-Inf,xmax=Inf,ymin=single$weekpos[1],ymax=single$weekpos[1]+0.4,alpha=0.6,fill="white")+
     # month title text faded with year
-    annotate("text",x=1,y=single$monthpos[1],label=paste0(fullmonth," 2018"),size=7,hjust=0,col="grey40",fontface="bold")+
+    annotate("text",x=1,y=single$monthpos[1],label=paste0(fullmonth," 2018"),size=27,hjust=0,col="grey40",fontface="bold",family="gochi")+
     # month title text
-    annotate("text",x=1,y=single$monthpos[1],label=fullmonth,size=7,hjust=0,col="grey20",fontface="bold")+
+    annotate("text",x=1,y=single$monthpos[1],label=fullmonth,size=27,hjust=0,col="grey20",fontface="bold",family="gochi")+
     # image description text
     annotate("text",x=single$date[nrow(single)],y=single$monthpos[1],label=cap$description[i],size=4,hjust=1,col=cap$textcol[i])+
     # week background circle
@@ -116,7 +116,7 @@ for(i in 1:length(levs))
     # day text
     geom_text(aes(x=date,y=daypos),label=single$day,size=4.8,col=single$holiday)+
     # date text
-    geom_text(aes(x=date,y=datepos),label=single$date,size=7.5,col=single$holiday)+
+    geom_text(aes(x=date,y=datepos),label=single$date,size=17.5,col=single$holiday)+
     # important information text line 1
     geom_text(aes(x=date,y=markpos1),label=single$description2,size=2.8,col="grey20",vjust=1)+
     # important information text line 2
@@ -125,7 +125,7 @@ for(i in 1:length(levs))
     scale_x_continuous(limits=c(0,max(single$date)+1),expand=c(0,0.6))+
     scale_y_continuous(limits=c(0,10),expand=c(0,0))+
     labs(x=NULL,y=NULL)+
-    theme_bw(base_family="Gidole")+
+    theme_bw(base_family="gochi")+
     # remove graph elements
     theme(plot.background=element_rect(fill="transparent",colour=NA),
           plot.margin = margin(c(0,0,0,0)),
@@ -138,44 +138,34 @@ for(i in 1:length(levs))
           panel.border = element_blank(),
           panel.background=element_rect(fill="transparent",colour=NA),
           panel.ontop=TRUE)
-  
+
   # export image
   if(export=="png")
   {
     png(filename=paste0(single$month[1],".png"),height=img_height,
-         width=img_width,res=img_dpi,units=img_units,family="Gidole",
+         width=img_width,res=img_dpi,units=img_units,family="gochi",
          bg="transparent",type="cairo")
     print(p)
     dev.off()
     message(paste0("Exported ",single$month[1],".png"))
   }
-  
+
   if(export=="tiff")
   {
     tiff(filename=paste0(single$month[1],".tiff"),height=img_height,
-              width=img_width,res=img_dpi,units=img_units,family="Gidole",
+              width=img_width,res=img_dpi,units=img_units,family="gochi",
               compression="lzw",type="cairo",bg="transparent")
     print(p)
     dev.off()
     message(paste0("Exported ",single$month[1],".tiff"))
   }
-  
+
   if(export=="pdf")
   {
     pdf(file=paste0(single$month[1],".pdf"),height=round(img_height*0.039,0),
-        width=round(img_width*0.039,0),family="Gidole")
+        width=round(img_width*0.039,0),family="gochi")
     print(p)
     dev.off()
     message(paste0("Exported ",single$month[1],".pdf"))
   }
 }
-
-
-
-
-
-
-
-
-
-
