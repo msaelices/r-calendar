@@ -9,3 +9,4 @@ Mar 10,Cumple Abuela Sole,birthday
 Mar 12,Cumple Tata Lore,birthday
 Mar 29,Cumple Papi,birthday
 May 21,Mi primer cumple,birthday
+Abr 03,Cumple Tito Manolo,birthday
