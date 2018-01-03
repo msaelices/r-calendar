@@ -2,7 +2,7 @@ date,description,type
 Ene 01,Año Nuevo,public holiday
 Mar 19,Dia de papi,none
 May 06,Dia de mami,public holiday
-Dec 25,Navidad,public holiday
+Dic 25,Navidad,public holiday
 Ene 27,Cumple Mami,birthday
 Feb 23,Cumple Abuela Conchi,birthday
 Mar 10,Cumple Abuela Sole,birthday
