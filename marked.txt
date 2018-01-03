@@ -2,7 +2,7 @@ date,description,type
 Ene 01,Año Nuevo,public holiday
 Mar 19,Dia de papi,none
 May 06,Dia de mami,public holiday
-Dec 25,Navidad,public holiday
+Dic 25,Navidad,public holiday
 Ene 11,Cumple Carmencita,birthday
 Ene 18,Cumple Jose,birthday
 Ene 27,Cumple Mami,birthday
@@ -17,4 +17,4 @@ Jun 21,Cumple Elena,birthday
 Ago 04,Cumple Inés,birthday
 Sep 12,Cumple Miguel,birthday
 Nov 22,Cumple Carmen,birthday
-Dec 7,Cumple Belén,birthday
+Dic 7,Cumple Belén,birthday
