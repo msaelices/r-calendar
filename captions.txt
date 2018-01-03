@@ -1,6 +1,6 @@
 month	description	textcol
-1	No se puede ser más buena	violetred4
-2	Qué frío!	violetred4
+1	Tengo una super abuela 	violetred4
+2	¡Qué frío!	violetred4
 3	¡Arriba pestañas!	violetred4
 4	¿Un partidito?	violetred4
 5	¡Quiero a mi abuelita!	violetred4

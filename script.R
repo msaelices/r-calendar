@@ -39,7 +39,7 @@ df_raw <- data.frame(fulldate=as.character(dates),
                   stringsAsFactors=F)
 
 # read marked dates and description
-marked <- read.delim("marked.txt",sep="\t",header=T,stringsAsFactors=F)
+marked <- read.delim("marked.txt",sep=",",header=T,stringsAsFactors=F)
 # add newline to last space in the description
 marked$description <- str_replace(marked$description," [:alnum:]+$",str_replace(str_extract(marked$description," [:alnum:]+$")," ","\n"))
 # create R dates
@@ -132,9 +132,9 @@ for(i in 1:length(levs))
     # date text
     geom_text(aes(x=date,y=datepos),label=single$date,size=24,col=single$holiday,family="gochi")+
     # important information text line 1
-    geom_text(aes(x=date,y=markpos1),label=single$description2,size=14,col="grey20",vjust=1,family="gochi")+
+    geom_text(aes(x=date,y=markpos1),label=single$description2,size=14,col="darkred",vjust=1,family="gochi")+
     # important information text line 2
-    geom_text(aes(x=date,y=markpos2),label=single$description1,size=14,col="grey20",vjust=1,family="gochi")+
+    geom_text(aes(x=date,y=markpos2),label=single$description1,size=14,col="darkred",vjust=1,family="gochi")+
     # limit scales
     scale_x_continuous(limits=c(0,max(single$date)+1),expand=c(0,0.6))+
     scale_y_continuous(limits=c(0,10),expand=c(0,0))+
