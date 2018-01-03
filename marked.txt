@@ -3,9 +3,16 @@ Ene 01,Año Nuevo,public holiday
 Mar 19,Dia de papi,none
 May 06,Dia de mami,public holiday
 Dec 25,Navidad,public holiday
+Ene 11,Cumple Carmencita,birthday
+Ene 18,Cumple Jose,birthday
 Ene 27,Cumple Mami,birthday
+Feb 16,Cumple Migue,birthday
 Feb 23,Cumple Abuela Conchi,birthday
-Mar 10,Cumple Abuela Sole,birthday
-Mar 12,Cumple Tata Lore,birthday
-Mar 29,Cumple Papi,birthday
+Mar 9,Cumple Miguelito,birthday
+Mar 29,Cumple papi,birthday
+May 13,Cumple Betty,birthday
+May 17,Cumple Cris,birthday
 May 21,Mi primer cumple,birthday
+Jun 21,Cumple Elena,birthday
+Ago 04,Cumple Inés,birthday
+Sep 12,Cumple Miguel,birthday
