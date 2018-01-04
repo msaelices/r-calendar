@@ -9,5 +9,5 @@ month	description	textcol
 8	¡Ojú que caló!	violetred4
 9	Clavadita a mi mami, ¿eh?	violetred4
 10	Tu osita de peluche	violetred4
-11	¿Cuándo sale pocoyo?	violetred4
+11	¿Quién es mi mami?	violetred4
 12	¡Jo-jo-jo!	violetred4
