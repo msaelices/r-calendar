@@ -3,7 +3,7 @@ month	description	textcol
 2	¡Qué frío!	violetred4
 3	¡Arriba pestañas!	violetred4
 4	Soy la llave maestra de vuestros corazones	violetred4
-5	¡Quiero a mi abuelita!	violetred4
+5	¡Me meo de la risa!	violetred4
 6	¿Cómo arranco el mono?	violetred4
 7	Abuela con patas	violetred4
 8	¡Ojú que caló!	violetred4
